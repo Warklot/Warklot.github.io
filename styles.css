@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 1px 1%;
+    background-color: #24272C;
+}
+
+.logolinkcolor{
+    background-color: #24272C
+}
+.logo {
+    cursor: pointer;
+    background-color: #24272C
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+    font-family: "Inter", sans-serif;
+    color: #edf0f1;
+    background-color: #24272C;
+    font-weight: bold;
+    position: relative;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+}
+
+/*tarpai tarp tekstu*/
+.nav__links li {
+    background-color: #24272C;
+}
+
+.nav__links li a:after {
+    content: "";
+    height: 1px;
+    width:100%;
+    background-color: #5EFC19;
+    position: absolute;
+    left: 0;
+    bottom: -19px;
+    opacity: 0;
+    pointer-events: none;
+}
+.nav__links li a:hover {
+    color: #5EFC19;
+}
+.nav__links li a:hover::after,.nav__links li a:focus:after {
+    opacity: 1;
+}
+.cta {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+}
+
+.cta:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* Mobile Nav */
+
+.menu {
+    display: none;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #24252a;
+    overflow-x: hidden;
+    transition: width 0.5s ease 0s;
+}
+
+.overlay--active {
+    width: 100%;
+}
+
+.overlay__content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay a {
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: color 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #0088a9;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #edf0f1;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px;
+    }
+
+    .overlay .close {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .nav__links,
+    .cta {
+        display: none;
+    }
+
+    .menu {
+        display: initial;
+    }
+}
