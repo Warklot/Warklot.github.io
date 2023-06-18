@@ -11,6 +11,7 @@ header {
     align-items: center;
     padding: 1px 1%;
     background-color: #24272C;
+    
 }
 
 .logolinkcolor{
@@ -20,10 +21,16 @@ header {
     cursor: pointer;
     background-color: #24272C
 }
-
-.nav__links a,
-.cta,
-.overlay__content a {
+.mobile-menu a{
+    font-family: "Inter", sans-serif;
+        color: #edf0f1;
+        background-color: black;
+        font-weight: bold;
+        position: relative;
+        text-decoration: none;
+        padding: 0 10px;
+}
+.nav__links a{
     font-family: "Inter", sans-serif;
     color: #edf0f1;
     background-color: #24272C;
@@ -31,118 +38,89 @@ header {
     position: relative;
     text-decoration: none;
     padding: 0 10px;
+    
 }
 
-.nav__links {
+.nav__links,.mobile-menu {
     list-style: none;
     display: flex;
+    overflow: hidden;
+    
 }
 
 /*tarpai tarp tekstu*/
-.nav__links li {
+.nav__links li,
+.mobile-menu li {
     background-color: #24272C;
 }
 
-.nav__links li a:after {
-    content: "";
-    height: 1px;
-    width:100%;
-    background-color: #5EFC19;
-    position: absolute;
-    left: 0;
-    bottom: -19px;
-    opacity: 0;
-    pointer-events: none;
-}
-.nav__links li a:hover {
+.nav__links li a:hover,.mobile-menu li a:hover {
     color: #5EFC19;
 }
-.nav__links li a:hover::after,.nav__links li a:focus:after {
-    opacity: 1;
-}
-.cta {
-    padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease 0s;
-}
+.nav__links li.active,.mobile-menu li.active{
+    border-bottom: 1px solid #5EFC19;
 
-.cta:hover {
-    background-color: rgba(0, 136, 169, 0.8);
+    
 }
-
-/* Mobile Nav */
-
-.menu {
+#hamburger-icon {
+    margin: auto 0;
     display: none;
+    cursor: pointer;
+    right: 25px;
+    position: absolute;
+    background-color: #24272C;
+    
+}
+#hamburger-icon div{
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.5s;
 }
 
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    background-color: #24252a;
-    overflow-x: hidden;
-    transition: width 0.5s ease 0s;
+
+.open .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
 }
 
-.overlay--active {
-    width: 100%;
+.open .bar2 {
+    opacity: 0;
 }
 
-.overlay__content {
+.open .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
     display: flex;
-    height: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    
 }
 
-.overlay a {
-    padding: 15px;
-    font-size: 36px;
-    display: block;
-    transition: color 0.3s ease 0s;
-}
-
-.overlay a:hover,
-.overlay a:focus {
-    color: #0088a9;
-}
-
-.overlay .close {
+.mobile-menu {
+    display: none;
     position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-    color: #edf0f1;
+    top: 50px;
+    left: -255px;
+    height: calc(100vh - 50px);
 }
 
-@media screen and (max-height: 450px) {
-    .overlay a {
-        font-size: 20px;
-    }
-
-    .overlay .close {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
+.mobile-menu li {
+    margin-bottom: 10px;
+    
 }
 
-@media only screen and (max-width: 800px) {
-
-    .nav__links,
-    .cta {
+@media only screen and (max-width: 600px) {
+    header nav {
         display: none;
     }
 
-    .menu {
-        display: initial;
+    #hamburger-icon {
+        display: block;
     }
 }
