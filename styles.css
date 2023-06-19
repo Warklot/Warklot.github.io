@@ -50,7 +50,7 @@ header {
     
 }
 .nav__links li::marker{
-    color:#24272C;
+    color:red;
 }
 .mobile-menu {
     width: 100%;
