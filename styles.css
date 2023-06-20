@@ -3,16 +3,31 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
     background-color: #000000;
 }
 
 
 
 header {
-    display: flex;
+    display:flex;
     align-items: center;
     padding: 1px 1%;
     background-color: #24272C;
+
+}
+.prisijungimas{
+    font-family: "Inter", sans-serif;
+    border-radius: 5px;
+    position:relative;
+    font-size: 15px;
+    background-color:#5EFC19;
+    color:black;
+    list-style-type: none;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px;
+    margin-left:auto;
     
 }
 
@@ -139,11 +154,27 @@ display: flex;
     
 }
 
+.mobile-menu li a.prisijungimasmobile{
+    font-family: "Inter", sans-serif;
+    border-radius: 5px;
+    position: relative;
+    font-size: 15px;
+    background-color: #5EFC19;
+    color: black;
+    list-style-type: none;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: auto;
+}
 
 @media only screen and (max-width: 600px) {
     header nav {
         display: none;
         
+    }
+    .prisijungimas{
+        display:none;
     }
     header{
         justify-content: space-between
